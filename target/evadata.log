@@ -1,0 +1,38 @@
+
+2015-09-23 16:27:24
+[INFO]-[Thread: main]-[?.?()]: using logger: com.alibaba.dubbo.common.logger.log4j.Log4jLoggerAdapter
+
+2015-09-23 16:27:28
+[WARN]-[Thread: DubboClientReconnectTimer-thread-1]-[com.alibaba.dubbo.remoting.transport.AbstractClient$1.run()]:  [DUBBO] client reconnect to 211.154.164.67:20883 find error . url: dubbo://211.154.164.67:20883/cn.oge.kdm.service.rtdata.api.RTDataService?application=kdm-customer&codec=dubbo&dubbo=2.8.4&heartbeat=60000&interface=cn.oge.kdm.service.rtdata.api.RTDataService&methods=getRTDataHistory,getRTDataHistoryZip,addSourceCode,writeRTDataListHis,getAllSourceCodes,getRTDataSnapshot&pid=796&revision=3.1.0&side=consumer&timeout=60000&timestamp=1442996845036, dubbo version: 2.8.4, current host: 192.168.134.1
+com.alibaba.dubbo.remoting.RemotingException: client(url: dubbo://211.154.164.67:20883/cn.oge.kdm.service.rtdata.api.RTDataService?application=kdm-customer&codec=dubbo&dubbo=2.8.4&heartbeat=60000&interface=cn.oge.kdm.service.rtdata.api.RTDataService&methods=getRTDataHistory,getRTDataHistoryZip,addSourceCode,writeRTDataListHis,getAllSourceCodes,getRTDataSnapshot&pid=796&revision=3.1.0&side=consumer&timeout=60000&timestamp=1442996845036) failed to connect to server /211.154.164.67:20883, error message is:null
+	at com.alibaba.dubbo.remoting.transport.netty.NettyClient.doConnect(NettyClient.java:141)
+	at com.alibaba.dubbo.remoting.transport.AbstractClient.connect(AbstractClient.java:280)
+	at com.alibaba.dubbo.remoting.transport.AbstractClient$1.run(AbstractClient.java:145)
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)
+	at java.util.concurrent.FutureTask.runAndReset(FutureTask.java:308)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$301(ScheduledThreadPoolExecutor.java:180)
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:294)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)
+	at java.lang.Thread.run(Thread.java:745)
+Caused by: java.nio.channels.ClosedByInterruptException
+	at java.nio.channels.spi.AbstractInterruptibleChannel.end(AbstractInterruptibleChannel.java:202)
+	at sun.nio.ch.SocketChannelImpl.connect(SocketChannelImpl.java:659)
+	at org.jboss.netty.channel.socket.nio.NioClientSocketPipelineSink.connect(NioClientSocketPipelineSink.java:140)
+	at org.jboss.netty.channel.socket.nio.NioClientSocketPipelineSink.eventSunk(NioClientSocketPipelineSink.java:103)
+	at org.jboss.netty.handler.codec.oneone.OneToOneEncoder.handleDownstream(OneToOneEncoder.java:60)
+	at org.jboss.netty.channel.Channels.connect(Channels.java:541)
+	at org.jboss.netty.channel.AbstractChannel.connect(AbstractChannel.java:210)
+	at org.jboss.netty.bootstrap.ClientBootstrap.connect(ClientBootstrap.java:227)
+	at org.jboss.netty.bootstrap.ClientBootstrap.connect(ClientBootstrap.java:188)
+	at com.alibaba.dubbo.remoting.transport.netty.NettyClient.doConnect(NettyClient.java:105)
+	... 9 more
+
+2015-09-23 16:27:28
+[INFO]-[Thread: DubboShutdownHook-NettyClient]-[com.alibaba.dubbo.remoting.transport.netty.NettyClient$1.run()]:  [DUBBO] Run shutdown hook of netty client now., dubbo version: 2.8.4, current host: 192.168.134.1
+
+2015-09-23 16:27:28
+[INFO]-[Thread: DubboShutdownHook]-[com.alibaba.dubbo.config.AbstractConfig$1.run()]:  [DUBBO] Run shutdown hook now., dubbo version: 2.8.4, current host: 192.168.134.1
+
+2015-09-23 16:27:28
+[INFO]-[Thread: DubboShutdownHook]-[com.alibaba.dubbo.registry.support.AbstractRegistryFactory.destroyAll()]:  [DUBBO] Close all registries [], dubbo version: 2.8.4, current host: 192.168.134.1
